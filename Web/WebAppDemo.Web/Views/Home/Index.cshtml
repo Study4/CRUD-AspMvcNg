@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NorthWind - Customer</h2>
+
+<div ng-app="hrApp" ng-controller="employees-controller">
+    <form>
+        <label>LastName</label>
+        <input type="text" ng-model="emp.lastName" />
+        <label>FirstName</label>
+        <input type="text" ng-model="emp.firstName" />
+        <button ng-click="add()">新增</button>
+        <button ng-click="update()">更新</button>
+    </form>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>LastName</td>
+                    <td>FirstName</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in emps">
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.firstName}}</td>
+                    <td><button type="button" class="btn btn-link" ng-click="edit(emp.employeeID)">修改</button></td>
+                    <td><button type="button" class="btn btn-link" ng-click="del(emp.employeeID)">刪除</button></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+
+@section scripts{
+<script src="~/Scripts/app/hr-app.js"></script>
+<script src="~/Scripts/app/HRApp/Controllers/hr-controller.js"></script>
+<script src="~/Scripts/app/HRApp/Services/employees-services.js"></script>
+}
