@@ -1,7 +1,7 @@
 angular.module('hrapp.services.employeeServices', [
     'ngResource'
 ]).factory('employeeServices', function ($resource) {
-    return $resource('http://localhost:25249/api/employees/:employeeId', { employeeId: '@id' }, {
+    return $resource('http://172.26.64.20/api/employees/:employeeId', { employeeId: '@id' }, {
         query: { method: 'GET', isArray: true },
         queryByID: { method: 'GET' },
         create: { method: 'POST' },
