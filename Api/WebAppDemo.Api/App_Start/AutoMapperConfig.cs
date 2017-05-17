@@ -15,25 +15,15 @@ namespace WebAppDemo.Api.App_Start
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.AddProfile<FpsProfile>();
-                //cfg.AddProfile<IdentityProfile>();
+                cfg.AddProfile<EmpProfile>();
             });
         }
-        public class FpsProfile : Profile
+        public class EmpProfile : Profile
         {
             protected override void Configure()
             {
                 CreateMap<Employee, EmployeeDto>().ReverseMap();
             }
         }
-
-        //public class IdentityProfile : Profile
-        //{
-        //    protected override void Configure()
-        //    {
-        //        Mapper.CreateMap<User, UserDto>().ReverseMap();
-        //    }
-        //}
-
     }
 }

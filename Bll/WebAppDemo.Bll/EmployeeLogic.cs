@@ -49,7 +49,7 @@ namespace WebAppDemo.Bll
             if (model.EmployeeID != 0)
             {
                 //更新
-                _db.Employees.Attach(model);
+                _db.Entry(model).State = System.Data.Entity.EntityState.Modified;
 
             }
             else
@@ -65,7 +65,7 @@ namespace WebAppDemo.Bll
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!entityExists(model.EmployeeID))
+                if (!EntityExists(model.EmployeeID))
                 {
                     return null;
                 }
@@ -95,7 +95,7 @@ namespace WebAppDemo.Bll
 
         }
 
-        private bool entityExists(int id)
+        private bool EntityExists(int id)
         {
              return _db.Employees.Count(e => e.EmployeeID == id) > 0;
         }
