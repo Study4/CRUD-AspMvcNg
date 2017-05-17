@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebAppDemo.Web.Controllers
 {
-    public class SesstionController : Controller
+    public class SessionController : Controller
     {
         // GET: Home
         public ActionResult Index()
