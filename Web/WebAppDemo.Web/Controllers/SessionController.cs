@@ -12,7 +12,6 @@ namespace WebAppDemo.Web.Controllers
         public ActionResult Index()
         {
             Session["Test"] = "Hello Redis";
-            TempData["Test"] = "Hello Redis";
 
             return View();
         }
